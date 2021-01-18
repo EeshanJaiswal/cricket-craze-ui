@@ -1,0 +1,22 @@
+ng new <app-name> --prefix=”<prefix-name>”
+ng add @angular/material
+
+npm install --save bootstrap
+npm install jquery --save
+npm install popper.js --save
+
+then update as per the angular.json document
+
+ng g m shared-module/
+ng g m core-module/
+ng g m block-module/
+
+ng g c block-module/navbar
+
+ng g m views-module/home
+ng g c views-module/home
+
+Feature/Views module should not depend on each other and can depend on core , block and shared module
+Core module - Modules and Services that are used across multiple components, this module does not depend on any module.
+Block Module- components Directives and pipes which are used across the application as an independent block (ex navbar, footer), this module can depend on core module and shared module.
+Shared Module- Independent components, Directives and pipes which are used in multiple components including block modules.
